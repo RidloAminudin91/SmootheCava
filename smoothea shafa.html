@@ -1,835 +1,1114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smoothea Cava - Smoothie Buah Segar</title>
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            green: '#10B981',
-                            greenDark: '#059669',
-                            yellow: '#FBBF24',
-                            pink: '#F43F5E',
-                            bgLight: '#F7FDF9'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Plus Jakarta Sans"', 'sans-serif']
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                green: "#10B981",
+                greenDark: "#059669",
+                yellow: "#FBBF24",
+                pink: "#F43F5E",
+                bgLight: "#F7FDF9",
+              },
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              display: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
-
+  </head>
+  <body
+    class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-emerald-500 selection:text-white"
+  >
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition duration-300">
-                    <i class="fa-solid fa-blender"></i>
-                </div>
-                <div>
-                    <span class="font-display font-extrabold text-xl sm:text-2xl text-gray-900 tracking-tight block">SMOOTHEA <span class="text-emerald-600">CAVA</span></span>
-                    <span class="text-[10px] tracking-widest text-emerald-600 font-semibold uppercase block -mt-1">Smoothie Buah Segar</span>
-                </div>
-            </a>
+    <header
+      class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition duration-300"
+          >
+            <i class="fa-solid fa-blender"></i>
+          </div>
+          <div>
+            <span
+              class="font-display font-extrabold text-xl sm:text-2xl text-gray-900 tracking-tight block"
+              >SMOOTHEA <span class="text-emerald-600">CAVA</span></span
+            >
+            <span
+              class="text-[10px] tracking-widest text-emerald-600 font-semibold uppercase block -mt-1"
+              >Smoothie Buah Segar</span
+            >
+          </div>
+        </a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-gray-600">
-                <a href="#tentang" class="hover:text-emerald-600 transition">Tentang Kami</a>
-                <a href="#menu" class="hover:text-emerald-600 transition">Varian Rasa</a>
-                <a href="#keunggulan" class="hover:text-emerald-600 transition">Keunggulan</a>
-                <a href="#order" class="hover:text-emerald-600 transition">Cara Pesan</a>
-                <button onclick="toggleAdminModal()" class="text-xs bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-3 py-1.5 rounded-lg transition font-semibold">
-                    <i class="fa-solid fa-user-shield mr-1"></i> Admin Panel
-                </button>
-            </nav>
+        <!-- Desktop Menu -->
+        <nav
+          class="hidden md:flex items-center gap-8 font-medium text-gray-600"
+        >
+          <a href="#tentang" class="hover:text-emerald-600 transition"
+            >Tentang Kami</a
+          >
+          <a href="#menu" class="hover:text-emerald-600 transition"
+            >Varian Rasa</a
+          >
+          <a href="#keunggulan" class="hover:text-emerald-600 transition"
+            >Keunggulan</a
+          >
+          <a href="#order" class="hover:text-emerald-600 transition"
+            >Cara Pesan</a
+          >
+          <button
+            onclick="toggleAdminModal()"
+            class="text-xs bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-3 py-1.5 rounded-lg transition font-semibold"
+          >
+            <i class="fa-solid fa-user-shield mr-1"></i> Admin Panel
+          </button>
+        </nav>
 
-            <!-- Action Button -->
-            <div class="hidden md:flex items-center gap-3">
-                <a href="https://wa.me/6281212912410?text=Halo%20Smoothea%20Cava,%20saya%20mau%20pesan!" 
-                   target="_blank" 
-                   class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-md shadow-emerald-600/20 hover:shadow-lg transition duration-300 flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Pesan via WA</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none p-2">
-                <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
-            </button>
+        <!-- Action Button -->
+        <div class="hidden md:flex items-center gap-3">
+          <a
+            href="https://wa.me/6281212912410?text=Halo%20Smoothea%20Cava,%20saya%20mau%20pesan!"
+            target="_blank"
+            class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-md shadow-emerald-600/20 hover:shadow-lg transition duration-300 flex items-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Pesan via WA</span>
+          </a>
         </div>
 
-        <!-- Mobile Menu Nav -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 shadow-xl">
-            <a href="#tentang" class="block text-gray-700 hover:text-emerald-600 font-medium py-1">Tentang Kami</a>
-            <a href="#menu" class="block text-gray-700 hover:text-emerald-600 font-medium py-1">Varian Rasa</a>
-            <a href="#keunggulan" class="block text-gray-700 hover:text-emerald-600 font-medium py-1">Keunggulan</a>
-            <a href="#order" class="block text-gray-700 hover:text-emerald-600 font-medium py-1">Cara Pesan</a>
-            <button onclick="toggleAdminModal()" class="w-full text-left text-xs bg-emerald-100 text-emerald-800 px-3 py-2 rounded-lg font-semibold block">
-                <i class="fa-solid fa-user-shield mr-1"></i> Admin Panel
-            </button>
-            <a href="https://wa.me/6281212912410?text=Halo%20Smoothea%20Cava,%20saya%20mau%20pesan!" 
-               target="_blank" 
-               class="w-full text-center mt-2 px-5 py-2.5 rounded-full bg-emerald-500 text-white font-medium block">
-                <i class="fa-brands fa-whatsapp mr-2"></i> Pesan Sekarang
-            </a>
-        </div>
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden text-gray-700 focus:outline-none p-2"
+        >
+          <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Nav -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 shadow-xl"
+      >
+        <a
+          href="#tentang"
+          class="block text-gray-700 hover:text-emerald-600 font-medium py-1"
+          >Tentang Kami</a
+        >
+        <a
+          href="#menu"
+          class="block text-gray-700 hover:text-emerald-600 font-medium py-1"
+          >Varian Rasa</a
+        >
+        <a
+          href="#keunggulan"
+          class="block text-gray-700 hover:text-emerald-600 font-medium py-1"
+          >Keunggulan</a
+        >
+        <a
+          href="#order"
+          class="block text-gray-700 hover:text-emerald-600 font-medium py-1"
+          >Cara Pesan</a
+        >
+        <button
+          onclick="toggleAdminModal()"
+          class="w-full text-left text-xs bg-emerald-100 text-emerald-800 px-3 py-2 rounded-lg font-semibold block"
+        >
+          <i class="fa-solid fa-user-shield mr-1"></i> Admin Panel
+        </button>
+        <a
+          href="https://wa.me/6281212912410?text=Halo%20Smoothea%20Cava,%20saya%20mau%20pesan!"
+          target="_blank"
+          class="w-full text-center mt-2 px-5 py-2.5 rounded-full bg-emerald-500 text-white font-medium block"
+        >
+          <i class="fa-brands fa-whatsapp mr-2"></i> Pesan Sekarang
+        </a>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-12 lg:py-20 bg-gradient-to-b from-emerald-50/60 via-white to-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100/80 text-emerald-800 text-xs sm:text-sm font-semibold">
-                        <i class="fa-solid fa-sparkles text-emerald-600"></i>
-                        <span>100% Buah Segar & Bahan Berkualitas</span>
-                    </div>
-                    
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-                        Kesegaran Nutrisi Alami dalam Setiap <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Tegukan Smoothie</span>
-                    </h1>
-                    
-                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Nikmati kelezatan smoothie sehat dari kombinasi buah segar alami, yogurt, dan susu berkualitas. Pilihan terbaik untuk memenuhi gaya hidup sehatmu setiap hari!
-                    </p>
-
-                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg shadow-emerald-600/30 hover:shadow-xl transition duration-300 text-center flex items-center justify-center gap-3">
-                            <span>Pesan Sekarang</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#menu" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-gray-800 font-bold border border-gray-200 shadow-sm transition duration-300 text-center">
-                            Lihat Menu Varian
-                        </a>
-                    </div>
-
-                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-200/60 max-w-md mx-auto lg:mx-0">
-                        <div>
-                            <span class="block font-display font-bold text-xl sm:text-2xl text-emerald-600">Rp 15Rb</span>
-                            <span class="text-xs text-gray-500">Mulai Per Cup</span>
-                        </div>
-                        <div>
-                            <span class="block font-display font-bold text-xl sm:text-2xl text-emerald-600">100%</span>
-                            <span class="text-xs text-gray-500">Buah Segar</span>
-                        </div>
-                        <div>
-                            <span class="block font-display font-bold text-xl sm:text-2xl text-emerald-600">Higienis</span>
-                            <span class="text-xs text-gray-500">Terjamin Rasa</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                            <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80" alt="Smoothea Cava Fresh Smoothie" class="w-full h-[420px] object-cover">
-                        </div>
-                    </div>
-                </div>
+    <section
+      class="relative py-12 lg:py-20 bg-gradient-to-b from-emerald-50/60 via-white to-gray-50 overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100/80 text-emerald-800 text-xs sm:text-sm font-semibold"
+            >
+              <i class="fa-solid fa-sparkles text-emerald-600"></i>
+              <span>100% Buah Segar & Bahan Berkualitas</span>
             </div>
+
+            <h1
+              class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight"
+            >
+              Kesegaran Nutrisi Alami dalam Setiap
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500"
+                >Tegukan Smoothie</span
+              >
+            </h1>
+
+            <p
+              class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Nikmati kelezatan smoothie sehat dari kombinasi buah segar alami,
+              yogurt, dan susu berkualitas. Pilihan terbaik untuk memenuhi gaya
+              hidup sehatmu setiap hari!
+            </p>
+
+            <div
+              class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
+              <a
+                href="#order"
+                class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-lg shadow-emerald-600/30 hover:shadow-xl transition duration-300 text-center flex items-center justify-center gap-3"
+              >
+                <span>Pesan Sekarang</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a
+                href="#menu"
+                class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-gray-800 font-bold border border-gray-200 shadow-sm transition duration-300 text-center"
+              >
+                Lihat Menu Varian
+              </a>
+            </div>
+
+            <div
+              class="pt-6 grid grid-cols-3 gap-4 border-t border-gray-200/60 max-w-md mx-auto lg:mx-0"
+            >
+              <div>
+                <span
+                  class="block font-display font-bold text-xl sm:text-2xl text-emerald-600"
+                  >Rp 15Rb</span
+                >
+                <span class="text-xs text-gray-500">Mulai Per Cup</span>
+              </div>
+              <div>
+                <span
+                  class="block font-display font-bold text-xl sm:text-2xl text-emerald-600"
+                  >100%</span
+                >
+                <span class="text-xs text-gray-500">Buah Segar</span>
+              </div>
+              <div>
+                <span
+                  class="block font-display font-bold text-xl sm:text-2xl text-emerald-600"
+                  >Higienis</span
+                >
+                <span class="text-xs text-gray-500">Terjamin Rasa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <div
+                class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=80"
+                  alt="Smoothea Cava Fresh Smoothie"
+                  class="w-full h-[420px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Section tentang kami -->
+    <!-- Section Tentang Kami -->
     <section id="tentang" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-600 font-semibold tracking-wider uppercase text-sm">Profil Usaha</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Mengenal Smoothea Cava</h2>
-                <p class="text-gray-600 mt-4 leading-relaxed">
-                    Gaya hidup sehat yang semakin diminati masyarakat menjadi inspirasi kami untuk menghadirkan minuman smoothie berbahan dasar buah segar yang lezat, bernutrisi, dan terjangkau untuk semua kalangan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50/30 p-8 rounded-3xl border border-emerald-100">
-                    <div class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Visi Kami</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Menjadi pilihan utama minuman sehat yang berkualitas tinggi, enak, dan terjangkau bagi seluruh lapisan masyarakat.
-                    </p>
-                </div>
-
-                <div class="bg-gradient-to-br from-teal-50 to-emerald-50/30 p-8 rounded-3xl border border-teal-100">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Misi Kami</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
-                            <span>Menyajikan smoothie sehat dari bahan-bahan berkualitas prima dan buah segar harian.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
-                            <span>Menjaga kebersihan dan kepuasan standar kualitas mutu di setiap proses penyajian.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
-                            <span>Memberikan pelayanan ramah, cepat, dan responsif kepada setiap pelanggan.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="text-emerald-600 font-semibold tracking-wider uppercase text-sm"
+            >Profil Usaha</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2"
+          >
+            Mengenal Smoothea Cava
+          </h2>
+          <p class="text-gray-600 mt-4 leading-relaxed">
+            Gaya hidup sehat yang semakin diminati masyarakat menjadi inspirasi
+            kami untuk menghadirkan minuman smoothie berbahan dasar buah segar
+            yang lezat, bernutrisi, dan terjangkau untuk semua kalangan.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gradient-to-br from-emerald-50 to-teal-50/30 p-8 rounded-3xl border border-emerald-100"
+          >
+            <div
+              class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md"
+            >
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">
+              Visi Kami
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Menjadi pilihan utama minuman sehat yang berkualitas tinggi, enak,
+              dan terjangkau bagi seluruh lapisan masyarakat.
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-teal-50 to-emerald-50/30 p-8 rounded-3xl border border-teal-100"
+          >
+            <div
+              class="w-12 h-12 bg-teal-600 text-white rounded-2xl flex items-center justify-center text-xl mb-6 shadow-md"
+            >
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">
+              Misi Kami
+            </h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                <span
+                  >Menyajikan smoothie sehat dari bahan-bahan berkualitas prima
+                  dan buah segar harian.</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                <span
+                  >Menjaga kebersihan dan kepuasan standar kualitas mutu di
+                  setiap proses penyajian.</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i>
+                <span
+                  >Memberikan pelayanan ramah, cepat, dan responsif kepada
+                  setiap pelanggan.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Section Menu & Varian Rasa -->
     <section id="menu" class="py-20 bg-brand-bgLight">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-8">
-                <span class="text-pink-600 font-semibold tracking-wider uppercase text-sm">Pilihan Menu Favorit</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Varian Rasa Smoothea Cava</h2>
-                <p class="text-gray-600 mt-3">Semua varian dibuat dari racikan buah segar terpilih dengan harga ramah di kantong.</p>
-                <div class="mt-4">
-                    <button onclick="window.seedInitialMenu()" class="text-xs bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-semibold shadow transition">
-                        <i class="fa-solid fa-database mr-1"></i> Restorasi / Seed Menu Firestore
-                    </button>
-                </div>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filterContainer">
-                <button class="filter-btn active px-6 py-2.5 rounded-full font-medium text-sm transition bg-emerald-600 text-white shadow-md" data-filter="all">
-                    Semua Varian
-                </button>
-                <button class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200" data-filter="berry">
-                    Berry Series
-                </button>
-                <button class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200" data-filter="tropical">
-                    Tropical & Tropical Mix
-                </button>
-                <button class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200" data-filter="creamy">
-                    Creamy Special
-                </button>
-            </div>
-
-            <!-- Dynamic Menu Grid from Firestore -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="menuGrid">
-                <!-- Loaded dynamically via Firestore snapshot -->
-                <div class="col-span-full text-center py-12 text-gray-400">
-                    <i class="fa-solid fa-circle-notch fa-spin text-3xl text-emerald-500 mb-2"></i>
-                    <p>Memuat menu segar dari database...</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <span
+            class="text-pink-600 font-semibold tracking-wider uppercase text-sm"
+            >Pilihan Menu Favorit</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2"
+          >
+            Varian Rasa Smoothea Cava
+          </h2>
+          <p class="text-gray-600 mt-3">
+            Semua varian dibuat dari racikan buah segar terpilih dengan harga
+            ramah di kantong.
+          </p>
+          <div class="mt-4">
+            <button
+              onclick="window.seedInitialMenu()"
+              class="text-xs bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-semibold shadow transition"
+            >
+              <i class="fa-solid fa-database mr-1"></i> Restorasi / Seed Menu
+              Firestore
+            </button>
+          </div>
         </div>
+
+        <!-- Filter Buttons -->
+        <div
+          class="flex flex-wrap justify-center gap-3 mb-12"
+          id="filterContainer"
+        >
+          <button
+            class="filter-btn active px-6 py-2.5 rounded-full font-medium text-sm transition bg-emerald-600 text-white shadow-md"
+            data-filter="all"
+          >
+            Semua Varian
+          </button>
+          <button
+            class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200"
+            data-filter="berry"
+          >
+            Berry Series
+          </button>
+          <button
+            class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200"
+            data-filter="tropical"
+          >
+            Tropical & Tropical Mix
+          </button>
+          <button
+            class="filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200"
+            data-filter="creamy"
+          >
+            Creamy Special
+          </button>
+        </div>
+
+        <!-- Dynamic Menu Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="menuGrid"
+        >
+          <div class="col-span-full text-center py-12 text-gray-400">
+            <i
+              class="fa-solid fa-circle-notch fa-spin text-3xl text-emerald-500 mb-2"
+            ></i>
+            <p>Memuat menu segar dari database...</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Section Keunggulan -->
     <section id="keunggulan" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-600 font-semibold tracking-wider uppercase text-sm">Mengapa Memilih Kami</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2">Keunggulan Smoothea Cava</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
-                        <i class="fa-solid fa-apple-whole"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Buah Segar Asli</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Dibuat langsung dari buah pilihan tanpa pemanis buatan berlebihan demi menjaga kandungan vitaminnya.</p>
-                </div>
-
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
-                        <i class="fa-solid fa-hand-sparkles"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Proses Higienis</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Peralatan dan area pemprosesan selalu dijaga standar kebersihannya agar kualitas rasa tetap terjamin konsisten.</p>
-                </div>
-
-                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Harga Terjangkau</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Minuman sehat bintang lima dengan harga ramah mahasiswa dan karyawan, mulai dari Rp15.000 per cup.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span
+            class="text-emerald-600 font-semibold tracking-wider uppercase text-sm"
+            >Mengapa Memilih Kami</span
+          >
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-2"
+          >
+            Keunggulan Smoothea Cava
+          </h2>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6"
+            >
+              <i class="fa-solid fa-apple-whole"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-gray-900 mb-3">
+              Buah Segar Asli
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Dibuat langsung dari buah pilihan tanpa pemanis buatan berlebihan
+              demi menjaga kandungan vitaminnya.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6"
+            >
+              <i class="fa-solid fa-hand-sparkles"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-gray-900 mb-3">
+              Proses Higienis
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Peralatan dan area pemprosesan selalu dijaga standar kebersihannya
+              agar kualitas rasa tetap terjamin konsisten.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-3xl bg-gray-50 border border-gray-100 text-center hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6"
+            >
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+            <h3 class="font-display text-xl font-bold text-gray-900 mb-3">
+              Harga Terjangkau
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Minuman sehat bintang lima dengan harga ramah mahasiswa dan
+              karyawan, mulai dari Rp15.000 per cup.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Order Section Form -->
-    <section id="order" class="py-20 bg-gradient-to-b from-gray-50 to-emerald-50/50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 sm:p-12">
-                <div class="text-center mb-8">
-                    <span class="text-emerald-600 font-semibold tracking-wider uppercase text-sm">Pesan Cepat</span>
-                    <h2 class="font-display text-3xl font-bold text-gray-900 mt-1">Form Pemesanan Online</h2>
-                    <p class="text-gray-600 text-sm mt-2">Isi form di bawah ini untuk tersimpan ke database & langsung terhubung ke WhatsApp kami.</p>
-                </div>
+    <section
+      id="order"
+      class="py-20 bg-gradient-to-b from-gray-50 to-emerald-50/50"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 sm:p-12"
+        >
+          <div class="text-center mb-8">
+            <span
+              class="text-emerald-600 font-semibold tracking-wider uppercase text-sm"
+              >Pesan Cepat</span
+            >
+            <h2 class="font-display text-3xl font-bold text-gray-900 mt-1">
+              Form Pemesanan Online
+            </h2>
+            <p class="text-gray-600 text-sm mt-2">
+              Isi form di bawah ini untuk tersimpan ke database & langsung
+              terhubung ke WhatsApp kami.
+            </p>
+          </div>
 
-                <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-                        <input type="text" id="custName" placeholder="Masukkan nama Anda" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Varian Rasa</label>
-                            <select id="custVariant" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
-                                <!-- Populated dynamically -->
-                                <option value="Mango Delight">Mango Delight (Rp15.000)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Jumlah Cup</label>
-                            <input type="number" id="custQty" min="1" value="1" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp Pemesan</label>
-                        <input type="tel" id="custPhone" placeholder="0812xxxxxxx" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Catatan Tambahan (Opsional)</label>
-                        <textarea id="custNote" rows="2" placeholder="Contoh: Kurangi manis / Tanpa es" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"></textarea>
-                    </div>
-
-                    <button type="submit" id="btnSubmitOrder" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        Simpan Pesanan & Buka WA
-                    </button>
-                </form>
+          <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Nama Lengkap</label
+              >
+              <input
+                type="text"
+                id="custName"
+                placeholder="Masukkan nama Anda"
+                required
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+              />
             </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Pilih Varian Rasa</label
+                >
+                <select
+                  id="custVariant"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+                >
+                  <!-- Populated dynamically -->
+                  <option value="Mango Delight">
+                    Mango Delight (Rp15.000)
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Jumlah Cup</label
+                >
+                <input
+                  type="number"
+                  id="custQty"
+                  min="1"
+                  value="1"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Nomor WhatsApp Pemesan</label
+              >
+              <input
+                type="tel"
+                id="custPhone"
+                placeholder="0812xxxxxxx"
+                required
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Catatan Tambahan (Opsional)</label
+              >
+              <textarea
+                id="custNote"
+                rows="2"
+                placeholder="Contoh: Kurangi manis / Tanpa es"
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="btnSubmitOrder"
+              class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+            >
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              Simpan Pesanan & Buka WA
+            </button>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div>
-                <span class="font-display font-bold text-xl block">SMOOTHEA CAVA</span>
-                <p class="text-gray-400 text-sm mt-1">Minuman Smoothie Buah Segar, Healthy & Refreshing.</p>
-            </div>
-            <div class="text-sm text-gray-400">
-                &copy; 2026 Smoothea Cava. All rights reserved.
-            </div>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6"
+      >
+        <div>
+          <span class="font-display font-bold text-xl block"
+            >SMOOTHEA CAVA</span
+          >
+          <p class="text-gray-400 text-sm mt-1">
+            Minuman Smoothie Buah Segar, Healthy & Refreshing.
+          </p>
         </div>
+        <div class="text-sm text-gray-400">
+          &copy; 2026 Smoothea Cava. All rights reserved.
+        </div>
+      </div>
     </footer>
 
     <!-- Admin & Order Management Modal -->
-    <div id="adminModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 p-6 sm:p-8 relative">
-            <button onclick="toggleAdminModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-12 h-12 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-xl shadow">
-                    <i class="fa-solid fa-user-gear"></i>
-                </div>
-                <div>
-                    <h3 class="font-display text-2xl font-bold text-gray-900">Admin Dashboard</h3>
-                    <p class="text-xs text-gray-500">Kelola Menu Firestore & Pantau Pesanan Masuk</p>
-                </div>
-            </div>
+    <div
+      id="adminModal"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 p-6 sm:p-8 relative"
+      >
+        <button
+          onclick="toggleAdminModal()"
+          class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-xl"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
-            <!-- Tab Switcher -->
-            <div class="flex border-b border-gray-200 mb-6 gap-4">
-                <button onclick="switchAdminTab('orders')" id="tabBtnOrders" class="py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm">
-                    <i class="fa-solid fa-receipt mr-1"></i> Pesanan Masuk (<span id="ordersCount">0</span>)
-                </button>
-                <button onclick="switchAdminTab('menu')" id="tabBtnMenu" class="py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600">
-                    <i class="fa-solid fa-blender mr-1"></i> Kelola Menu (CRUD)
-                </button>
-            </div>
-
-            <!-- Orders Management Tab -->
-            <div id="adminOrdersTab" class="space-y-4">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm">
-                        <thead>
-                            <tr class="bg-gray-50 text-gray-600 uppercase text-xs">
-                                <th class="p-3 rounded-l-lg">Tanggal</th>
-                                <th class="p-3">Pemesan</th>
-                                <th class="p-3">Pesanan</th>
-                                <th class="p-3">WA Pemesan</th>
-                                <th class="p-3">Status</th>
-                                <th class="p-3 rounded-r-lg text-right">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ordersTableBody" class="divide-y divide-gray-100">
-                            <tr>
-                                <td colspan="6" class="p-6 text-center text-gray-400">Belum ada pesanan terdaftar di Firestore.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Menu CRUD Tab -->
-            <div id="adminMenuTab" class="hidden space-y-6">
-                <form id="addMenuForm" onsubmit="handleAddMenu(event)" class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-100 space-y-3">
-                    <h4 class="font-bold text-emerald-900 text-sm"><i class="fa-solid fa-plus-circle mr-1"></i> Tambah / Perbarui Varian Menu</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="text" id="mName" placeholder="Nama Varian (mis: Mango Fresh)" required class="p-2.5 rounded-xl text-sm border border-gray-200">
-                        <select id="mCategory" class="p-2.5 rounded-xl text-sm border border-gray-200">
-                            <option value="tropical">Tropical</option>
-                            <option value="berry">Berry</option>
-                            <option value="creamy">Creamy</option>
-                        </select>
-                        <input type="number" id="mPrice" placeholder="Harga (mis: 15000)" required class="p-2.5 rounded-xl text-sm border border-gray-200">
-                        <input type="text" id="mTag" placeholder="Tag (mis: Manis & Segar)" class="p-2.5 rounded-xl text-sm border border-gray-200">
-                        <input type="text" id="mBadge" placeholder="Badge (mis: Best Seller 🔥)" class="p-2.5 rounded-xl text-sm border border-gray-200">
-                        <input type="url" id="mImg" placeholder="URL Foto Gambar (Unsplash)" required class="p-2.5 rounded-xl text-sm border border-gray-200">
-                    </div>
-                    <textarea id="mDesc" placeholder="Deskripsi Singkat Varian..." class="w-full p-2.5 rounded-xl text-sm border border-gray-200" rows="2"></textarea>
-                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow transition">
-                        Simpan ke Firestore
-                    </button>
-                </form>
-
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-sm">
-                        <thead>
-                            <tr class="bg-gray-50 text-gray-600 uppercase text-xs">
-                                <th class="p-3 rounded-l-lg">Varian</th>
-                                <th class="p-3">Kategori</th>
-                                <th class="p-3">Harga</th>
-                                <th class="p-3 rounded-r-lg text-right">Aksi Hapus</th>
-                            </tr>
-                        </thead>
-                        <tbody id="adminMenuTableBody" class="divide-y divide-gray-100">
-                            <!-- Populated dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="flex items-center gap-3 mb-6">
+          <div
+            class="w-12 h-12 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-xl shadow"
+          >
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl font-bold text-gray-900">
+              Admin Dashboard
+            </h3>
+            <p class="text-xs text-gray-500">
+              Kelola Menu & Pantau Pesanan Masuk
+            </p>
+          </div>
         </div>
+
+        <!-- Tab Switcher -->
+        <div class="flex border-b border-gray-200 mb-6 gap-4">
+          <button
+            onclick="switchAdminTab('orders')"
+            id="tabBtnOrders"
+            class="py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm"
+          >
+            <i class="fa-solid fa-receipt mr-1"></i> Pesanan Masuk (<span
+              id="ordersCount"
+              >0</span
+            >)
+          </button>
+          <button
+            onclick="switchAdminTab('menu')"
+            id="tabBtnMenu"
+            class="py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600"
+          >
+            <i class="fa-solid fa-blender mr-1"></i> Kelola Menu (CRUD)
+          </button>
+        </div>
+
+        <!-- Orders Management Tab -->
+        <div id="adminOrdersTab" class="space-y-4">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-gray-50 text-gray-600 uppercase text-xs">
+                  <th class="p-3 rounded-l-lg">Tanggal</th>
+                  <th class="p-3">Pemesan</th>
+                  <th class="p-3">Pesanan</th>
+                  <th class="p-3">WA Pemesan</th>
+                  <th class="p-3">Status</th>
+                  <th class="p-3 rounded-r-lg text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody" class="divide-y divide-gray-100">
+                <tr>
+                  <td colspan="6" class="p-6 text-center text-gray-400">
+                    Belum ada pesanan terdaftar.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Menu CRUD Tab -->
+        <div id="adminMenuTab" class="hidden space-y-6">
+          <form
+            id="addMenuForm"
+            onsubmit="handleAddMenu(event)"
+            class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-100 space-y-3"
+          >
+            <h4 class="font-bold text-emerald-900 text-sm">
+              <i class="fa-solid fa-plus-circle mr-1"></i> Tambah / Perbarui
+              Varian Menu
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input
+                type="text"
+                id="mName"
+                placeholder="Nama Varian (mis: Mango Fresh)"
+                required
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              />
+              <select
+                id="mCategory"
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              >
+                <option value="tropical">Tropical</option>
+                <option value="berry">Berry</option>
+                <option value="creamy">Creamy</option>
+              </select>
+              <input
+                type="number"
+                id="mPrice"
+                placeholder="Harga (mis: 15000)"
+                required
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              />
+              <input
+                type="text"
+                id="mTag"
+                placeholder="Tag (mis: Manis & Segar)"
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              />
+              <input
+                type="text"
+                id="mBadge"
+                placeholder="Badge (mis: Best Seller 🔥)"
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              />
+              <input
+                type="url"
+                id="mImg"
+                placeholder="URL Foto Gambar (Unsplash)"
+                required
+                class="p-2.5 rounded-xl text-sm border border-gray-200"
+              />
+            </div>
+            <textarea
+              id="mDesc"
+              placeholder="Deskripsi Singkat Varian..."
+              class="w-full p-2.5 rounded-xl text-sm border border-gray-200"
+              rows="2"
+            ></textarea>
+            <button
+              type="submit"
+              class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm shadow transition"
+            >
+              Simpan Menu
+            </button>
+          </form>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-gray-50 text-gray-600 uppercase text-xs">
+                  <th class="p-3 rounded-l-lg">Varian</th>
+                  <th class="p-3">Kategori</th>
+                  <th class="p-3">Harga</th>
+                  <th class="p-3 rounded-r-lg text-right">Aksi Hapus</th>
+                </tr>
+              </thead>
+              <tbody id="adminMenuTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-2xl shadow-2xl z-50 hidden transition transform translate-y-2 flex items-center gap-3">
-        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
-        <span id="toastMessage" class="text-sm font-medium">Notifikasi</span>
+    <div
+      id="toastNotification"
+      class="fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-2xl shadow-2xl z-50 hidden transition transform translate-y-2 flex items-center gap-3"
+    >
+      <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+      <span id="toastMessage" class="text-sm font-medium">Notifikasi</span>
     </div>
 
-    <!-- UI Helper Functions -->
+    <!-- Script Utama & Interaksi Frontend -->
     <script>
-        let cachedMenuItems = [];
+      let cachedMenuItems = [];
+      let ordersList = JSON.parse(
+        localStorage.getItem("smoothea_orders") || "[]",
+      );
 
-        function showNotification(msg) {
-            const toast = document.getElementById('toastNotification');
-            if(!toast) return;
-            document.getElementById('toastMessage').innerText = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3500);
+      // Data awal default untuk Smoothea Cava
+      const defaultMenus = [
+        {
+          id: "1",
+          name: "Mango Delight",
+          category: "tropical",
+          price: 15000,
+          desc: "Smoothie mangga asli dengan paduan yogurt segar.",
+          badge: "Best Seller 🔥",
+          img: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "2",
+          name: "Strawberry Berry Bomb",
+          category: "berry",
+          price: 18000,
+          desc: "Kombinasi stroberi pilihan kaya antioksidan & susu low-fat.",
+          badge: "Favorite ❤️",
+          img: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80",
+        },
+        {
+          id: "3",
+          name: "Avocado Creamy Smooth",
+          category: "creamy",
+          price: 20000,
+          desc: "Alpukat mentega segar berpadu susu kental manis & cokelat.",
+          badge: "New 🌟",
+          img: "https://images.unsplash.com/photo-1630252595285-3bbcb51378d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        },
+        {
+          id: "4",
+          name: "Dragon Fruit Glow",
+          category: "tropical",
+          price: 17000,
+          desc: "Buah naga merah segar kaya serat untuk kesehatan kulit.",
+          badge: "",
+          img: "https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80",
+        },
+      ];
+
+      function getStoredMenu() {
+        const data = localStorage.getItem("smoothea_menus");
+        return data ? JSON.parse(data) : defaultMenus;
+      }
+
+      function saveStoredMenu(menus) {
+        localStorage.setItem("smoothea_menus", JSON.stringify(menus));
+      }
+
+      window.seedInitialMenu = function () {
+        saveStoredMenu(defaultMenus);
+        initApp();
+        showNotification("Menu berhasil direstorasi ke data awal!");
+      };
+
+      function showNotification(msg) {
+        const toast = document.getElementById("toastNotification");
+        if (!toast) return;
+        document.getElementById("toastMessage").innerText = msg;
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3500);
+      }
+
+      function toggleAdminModal() {
+        const modal = document.getElementById("adminModal");
+        if (modal) modal.classList.toggle("hidden");
+        renderAdminOrders();
+        renderAdminMenuTable();
+      }
+
+      function switchAdminTab(tab) {
+        const ordersTab = document.getElementById("adminOrdersTab");
+        const menuTab = document.getElementById("adminMenuTab");
+        const btnOrders = document.getElementById("tabBtnOrders");
+        const btnMenu = document.getElementById("tabBtnMenu");
+
+        if (tab === "orders") {
+          ordersTab.classList.remove("hidden");
+          menuTab.classList.add("hidden");
+          btnOrders.className =
+            "py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm";
+          btnMenu.className =
+            "py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600";
+        } else {
+          ordersTab.classList.add("hidden");
+          menuTab.classList.remove("hidden");
+          btnMenu.className =
+            "py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm";
+          btnOrders.className =
+            "py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600";
         }
+      }
 
-        function toggleAdminModal() {
-            const modal = document.getElementById('adminModal');
-            if(modal) modal.classList.toggle('hidden');
-        }
+      // Render Menu ke Grid Frontend & Select Option Form
+      function renderMenuGrid(items, filter = "all") {
+        cachedMenuItems = items;
+        const container = document.getElementById("menuGrid");
+        const selectVariant = document.getElementById("custVariant");
+        if (!container) return;
 
-        function switchAdminTab(tab) {
-            const ordersTab = document.getElementById('adminOrdersTab');
-            const menuTab = document.getElementById('adminMenuTab');
-            const btnOrders = document.getElementById('tabBtnOrders');
-            const btnMenu = document.getElementById('tabBtnMenu');
+        const filtered =
+          filter === "all" ? items : items.filter((i) => i.category === filter);
 
-            if (tab === 'orders') {
-                ordersTab.classList.remove('hidden');
-                menuTab.classList.add('hidden');
-                btnOrders.className = "py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm";
-                btnMenu.className = "py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600";
-            } else {
-                ordersTab.classList.add('hidden');
-                menuTab.classList.remove('hidden');
-                btnMenu.className = "py-2 px-4 border-b-2 border-emerald-600 text-emerald-600 font-bold text-sm";
-                btnOrders.className = "py-2 px-4 border-b-2 border-transparent text-gray-500 font-bold text-sm hover:text-emerald-600";
-            }
-        }
-
-        // Render Dynamic Menu to UI
-        window.renderMenuGrid = function(items) {
-            cachedMenuItems = items;
-            const container = document.getElementById('menuGrid');
-            if(!container) return;
-
-            if(items.length === 0) {
-                container.innerHTML = `
+        if (filtered.length === 0) {
+          container.innerHTML = `
                     <div class="col-span-full text-center py-12 bg-white rounded-3xl border border-dashed border-gray-300">
                         <i class="fa-solid fa-folder-open text-4xl text-amber-400 mb-3"></i>
-                        <p class="text-gray-600 font-semibold">Belum ada data varian di Firestore.</p>
-                        <button onclick="window.seedInitialMenu()" class="mt-3 px-4 py-2 bg-emerald-600 text-white font-bold text-xs rounded-full">
-                            Klik disini untuk Seed Data Awal
-                        </button>
+                        <p class="text-gray-600 font-semibold">Tidak ada varian dalam kategori ini.</p>
                     </div>
                 `;
-                return;
-            }
-
-            container.innerHTML = items.map(item => `
-                <div class="menu-item ${item.category} bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group" data-category="${item.category}">
-                    <div class="relative h-56 overflow-hidden">
-                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/2DD4BF/FFFFFF?text=${encodeURIComponent(item.name)}'">
-                        ${item.badge ? `<span class="absolute top-4 right-4 bg-amber-400 text-amber-950 text-xs font-bold px-3 py-1.5 rounded-full shadow-md">${item.badge}</span>` : ''}
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-display text-xl font-bold text-gray-900">${item.name}</h3>
-                            <span class="font-display font-bold text-emerald-600 text-lg">Rp ${Number(item.price).toLocaleString('id-ID')}</span>
+        } else {
+          container.innerHTML = filtered
+            .map(
+              (item) => `
+                    <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/2DD4BF/FFFFFF?text=Smoothea'">
+                            ${item.badge ? `<span class="absolute top-4 right-4 bg-amber-400 text-amber-950 text-xs font-bold px-3 py-1.5 rounded-full shadow-md">${item.badge}</span>` : ""}
                         </div>
-                        <p class="text-gray-500 text-sm mb-4">${item.desc || ''}</p>
-                        <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-                            <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">${item.tag || 'Fresh Blend'}</span>
-                            <button onclick="orderItem('${item.name}')" class="text-emerald-600 hover:text-emerald-700 text-sm font-semibold flex items-center gap-1">
-                                Pesan <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </button>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-display text-xl font-bold text-gray-900">${item.name}</h3>
+                                <span class="font-display font-bold text-emerald-600 text-lg">Rp ${Number(item.price).toLocaleString("id-ID")}</span>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-4">${item.desc || ""}</p>
+                            <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md uppercase">${item.category}</span>
+                                <a href="#order" onclick="selectVariantOrder('${item.name}')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow transition">
+                                    Pesan Ini
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                `,
+            )
+            .join("");
+        }
 
-            // Update Admin Menu CRUD Table
-            const adminMenuBody = document.getElementById('adminMenuTableBody');
-            if(adminMenuBody) {
-                adminMenuBody.innerHTML = items.map(item => `
-                    <tr>
-                        <td class="p-3 font-semibold text-gray-800">${item.name}</td>
-                        <td class="p-3 capitalize">${item.category}</td>
-                        <td class="p-3">Rp ${Number(item.price).toLocaleString('id-ID')}</td>
-                        <td class="p-3 text-right">
-                            <button onclick="deleteMenuItem('${item.id}')" class="text-red-500 hover:text-red-700 text-xs font-bold px-2 py-1 bg-red-50 rounded-md">
-                                <i class="fa-solid fa-trash mr-1"></i> Hapus
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
-            }
-        };
+        // Update Select Option di Form Pesan
+        if (selectVariant) {
+          selectVariant.innerHTML = items
+            .map(
+              (i) =>
+                `<option value="${i.name}">${i.name} (Rp ${Number(i.price).toLocaleString("id-ID")})</option>`,
+            )
+            .join("");
+        }
+      }
 
-        // Populate Select dropdown on Form
-        window.populateMenuSelectOptions = function(items) {
-            const selectEl = document.getElementById('custVariant');
-            if(!selectEl || items.length === 0) return;
-            selectEl.innerHTML = items.map(item => `
-                <option value="${item.name}" data-price="${item.price}">${item.name} - Rp ${Number(item.price).toLocaleString('id-ID')}</option>
-            `).join('');
-        };
+      window.selectVariantOrder = function (name) {
+        const select = document.getElementById("custVariant");
+        if (select) select.value = name;
+      };
 
-        // Render Orders in Admin Table
-        window.renderOrdersList = function(orders) {
-            const tbody = document.getElementById('ordersTableBody');
-            const countEl = document.getElementById('ordersCount');
-            if(!tbody) return;
-
-            if(countEl) countEl.innerText = orders.length;
-
-            if (orders.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-gray-400">Belum ada pesanan terdaftar di Firestore.</td></tr>`;
-                return;
-            }
-
-            tbody.innerHTML = orders.map(ord => {
-                const dateStr = ord.createdAt ? new Date(ord.createdAt).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }) : '-';
-                let statusBadge = 'bg-amber-100 text-amber-800';
-                if(ord.status === 'Selesai') statusBadge = 'bg-emerald-100 text-emerald-800';
-                if(ord.status === 'Dibatalkan') statusBadge = 'bg-red-100 text-red-800';
-
-                return `
-                    <tr class="hover:bg-gray-50/50">
-                        <td class="p-3 text-xs text-gray-500">${dateStr}</td>
-                        <td class="p-3 font-bold text-gray-800">${ord.customerName}</td>
-                        <td class="p-3">${ord.variant} (${ord.qty} Cup)</td>
-                        <td class="p-3 font-mono text-xs">${ord.customerPhone || '-'}</td>
-                        <td class="p-3">
-                            <span class="text-xs px-2.5 py-1 rounded-full font-bold ${statusBadge}">${ord.status}</span>
-                        </td>
-                        <td class="p-3 text-right">
-                            <select onchange="updateOrderStatus('${ord.id}', this.value)" class="text-xs p-1 rounded border border-gray-200">
-                                <option value="Pending" ${ord.status === 'Pending' ? 'selected' : ''}>Pending</option>
-                                <option value="Selesai" ${ord.status === 'Selesai' ? 'selected' : ''}>Selesai</option>
-                                <option value="Dibatalkan" ${ord.status === 'Dibatalkan' ? 'selected' : ''}>Dibatalkan</option>
-                            </select>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-        };
-    </script>
-
-    <!-- Firebase SDK Module -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, updateDoc, deleteDoc, onSnapshot, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Global Firebase Configuration & Variables
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'smoothea-cava-app';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' 
-            ? JSON.parse(__firebase_config) 
-            : {
-                apiKey: "demo-api-key",
-                authDomain: "demo-project.firebaseapp.com",
-                projectId: "demo-project",
-                storageBucket: "demo-project.appspot.com",
-                messagingSenderId: "123456789",
-                appId: "1:123456789:web:demo"
-            };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        const publicMenuColPath = collection(db, 'artifacts', appId, 'public', 'data', 'menu');
-        const publicOrdersColPath = collection(db, 'artifacts', appId, 'public', 'data', 'orders');
-
-        // Expose Firebase functions globally for UI interaction
-        window.db = db;
-        window.auth = auth;
-        window.publicMenuColPath = publicMenuColPath;
-        window.publicOrdersColPath = publicOrdersColPath;
-        window.addDoc = addDoc;
-        window.updateDoc = updateDoc;
-        window.deleteDoc = deleteDoc;
-        window.doc = doc;
-
-        // Auto authenticate anonymously for visitors
-        window.addEventListener('DOMContentLoaded', async () => {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-            } catch (err) {
-                console.warn("Auth initialization fallback:", err);
-            }
-
-            // Realtime Listener for Menu
-            onSnapshot(publicMenuColPath, (snapshot) => {
-                const menuItems = [];
-                snapshot.forEach(docSnap => {
-                    menuItems.push({ id: docSnap.id, ...docSnap.data() });
-                });
-                if (typeof window.renderMenuGrid === 'function') {
-                    window.renderMenuGrid(menuItems);
-                    window.populateMenuSelectOptions(menuItems);
-                }
-            }, (error) => {
-                console.error("Firestore Menu error:", error);
-            });
-
-            // Realtime Listener for Orders (Admin Dashboard)
-            onSnapshot(publicOrdersColPath, (snapshot) => {
-                const orders = [];
-                snapshot.forEach(docSnap => {
-                    orders.push({ id: docSnap.id, ...docSnap.data() });
-                });
-                orders.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-                if (typeof window.renderOrdersList === 'function') {
-                    window.renderOrdersList(orders);
-                }
-            }, (error) => {
-                console.error("Firestore Orders error:", error);
-            });
+      // Filter Button Listeners
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document.querySelectorAll(".filter-btn").forEach((b) => {
+            b.className =
+              "filter-btn px-6 py-2.5 rounded-full font-medium text-sm transition bg-white text-gray-600 hover:bg-emerald-50 border border-gray-200";
+          });
+          e.target.className =
+            "filter-btn active px-6 py-2.5 rounded-full font-medium text-sm transition bg-emerald-600 text-white shadow-md";
+          const filter = e.target.getAttribute("data-filter");
+          renderMenuGrid(getStoredMenu(), filter);
         });
+      });
 
-        // Seed initial menu data if empty
-        window.seedInitialMenu = async function() {
-            const initialMenu = [
-                { name: "Mango Delight", category: "tropical", price: 15000, badge: "Best Seller 🔥", desc: "Paduan mangga manis harum alami yang segar melimpah kaya Vitamin C.", tag: "Manis & Segar", img: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=600&q=80" },
-                { name: "Strawberry Fresh", category: "berry", price: 15000, badge: "Favorite 🍓", desc: "Sensasi asam manis buah strawberry asli yang membangkitkan semangat.", tag: "Sweet & Sour", img: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" },
-                { name: "Blueberry Bloom", category: "berry", price: 18000, badge: "", desc: "Kaya antioksidan dengan rasa blueberry mewah yang lembut di lidah.", tag: "Antioksidan Tinggi", img: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80" },
-                { name: "Mix Berry Blast", category: "berry", price: 18000, badge: "Special Mix ✨", desc: "Kombinasi sempurna strawberry & blueberry segar dalam satu sedotan.", tag: "Double Freshness", img: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=600&q=80" },
-                { name: "Avocado Creamy", category: "tropical", price: 15000, badge: "", desc: "Alpukat mentega pilihan yang creamy, mengenyangkan, dan bernutrisi tinggi.", tag: "Super Creamy", img: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80" },
-                { name: "Choco Banana", category: "creamy", price: 15000, badge: "", desc: "Perpaduan manisnya pisang murni dan cokelat lezat pencipta mood baik.", tag: "Energy Booster", img: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=600&q=80" }
-            ];
+      // Form Submit & Simpan ke localStorage Order
+      window.handleFormSubmit = function (e) {
+        e.preventDefault();
+        const name = document.getElementById("custName").value;
+        const variant = document.getElementById("custVariant").value;
+        const qty = document.getElementById("custQty").value;
+        const phone = document.getElementById("custPhone").value;
+        const note = document.getElementById("custNote").value;
 
-            for (const item of initialMenu) {
-                await addDoc(publicMenuColPath, item);
-            }
-            showNotification("Menu awal berhasil ditambahkan ke Firebase Firestore!");
+        const newOrder = {
+          id: "ORD-" + Date.now(),
+          date: new Date().toLocaleDateString("id-ID", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+          name,
+          variant,
+          qty,
+          phone,
+          note,
+          status: "Menunggu Konfirmasi",
         };
 
-        // Order submission to Firestore
-        window.saveOrderToFirestore = async function(orderData) {
-            try {
-                const docRef = await addDoc(publicOrdersColPath, {
-                    ...orderData,
-                    status: 'Pending',
-                    createdAt: Date.now()
-                });
-                return docRef.id;
-            } catch (err) {
-                console.error("Gagal menyalurkan pesanan:", err);
-                return null;
-            }
+        ordersList.unshift(newOrder);
+        localStorage.setItem("smoothea_orders", JSON.stringify(ordersList));
+
+        // Format WhatsApp URL
+        const waMessage = `Halo Admin Smoothea Cava, saya ingin memesan:%0A%0A*Nama:* ${encodeURIComponent(name)}%0A*Menu:* ${encodeURIComponent(variant)}%0A*Jumlah:* ${qty} Cup%0A*Catatan:* ${encodeURIComponent(note || "-")}%0A*No WA:* ${phone}%0A%0AMohon segera diproses ya!`;
+
+        showNotification("Pesanan berhasil disimpan & diarahkan ke WhatsApp!");
+        setTimeout(() => {
+          window.open(
+            `https://wa.me/6281212912410?text=${waMessage}`,
+            "_blank",
+          );
+        }, 1000);
+      };
+
+      // Admin Orders & Menu CRUD Functions
+      function renderAdminOrders() {
+        const tbody = document.getElementById("ordersTableBody");
+        const countSpan = document.getElementById("ordersCount");
+        if (!tbody) return;
+
+        countSpan.innerText = ordersList.length;
+
+        if (ordersList.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" class="p-6 text-center text-gray-400">Belum ada pesanan terdaftar.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = ordersList
+          .map(
+            (ord, idx) => `
+                <tr class="hover:bg-gray-50/50">
+                    <td class="p-3 text-xs text-gray-500">${ord.date}</td>
+                    <td class="p-3 font-semibold text-gray-900">${ord.name}</td>
+                    <td class="p-3 text-gray-700">${ord.variant} (${ord.qty} Cup) ${ord.note ? `<br><span class="text-xs text-gray-400">Note: ${ord.note}</span>` : ""}</td>
+                    <td class="p-3 text-emerald-600 font-medium">${ord.phone}</td>
+                    <td class="p-3"><span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-semibold">${ord.status}</span></td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteOrder(${idx})" class="text-red-500 hover:text-red-700 text-xs bg-red-50 px-2 py-1 rounded">Hapus</button>
+                    </td>
+                </tr>
+            `,
+          )
+          .join("");
+      }
+
+      window.deleteOrder = function (idx) {
+        ordersList.splice(idx, 1);
+        localStorage.setItem("smoothea_orders", JSON.stringify(ordersList));
+        renderAdminOrders();
+        showNotification("Pesanan dihapus.");
+      };
+
+      function renderAdminMenuTable() {
+        const tbody = document.getElementById("adminMenuTableBody");
+        const menus = getStoredMenu();
+        if (!tbody) return;
+
+        tbody.innerHTML = menus
+          .map(
+            (m, idx) => `
+                <tr class="hover:bg-gray-50/50">
+                    <td class="p-3 font-medium flex items-center gap-3">
+                        <img src="${m.img}" class="w-9 h-9 rounded-lg object-cover" onerror="this.src='https://placehold.co/100x100'">
+                        <div>
+                            <span class="block text-gray-900 font-semibold">${m.name}</span>
+                            <span class="text-xs text-gray-400">Rp ${Number(m.price).toLocaleString("id-ID")}</span>
+                        </div>
+                    </td>
+                    <td class="p-3 text-xs uppercase text-gray-600">${m.category}</td>
+                    <td class="p-3 font-semibold text-emerald-600">Rp ${Number(m.price).toLocaleString("id-ID")}</td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteMenuItem('${m.id}')" class="text-red-500 hover:text-red-700 text-xs bg-red-50 px-2.5 py-1 rounded">Hapus</button>
+                    </td>
+                </tr>
+            `,
+          )
+          .join("");
+      }
+
+      window.handleAddMenu = function (e) {
+        e.preventDefault();
+        const name = document.getElementById("mName").value;
+        const category = document.getElementById("mCategory").value;
+        const price = Number(document.getElementById("mPrice").value);
+        const tag = document.getElementById("mTag").value;
+        const badge = document.getElementById("mBadge").value;
+        const img = document.getElementById("mImg").value;
+        const desc = document.getElementById("mDesc").value;
+
+        const menus = getStoredMenu();
+        const newMenu = {
+          id: "MENU-" + Date.now(),
+          name,
+          category,
+          price,
+          tag,
+          badge,
+          img,
+          desc,
         };
-    </script>
 
-    <script>
-        // Admin status update
-        async function updateOrderStatus(orderId, newStatus) {
-            try {
-                const orderDocRef = window.doc(window.db, 'artifacts', typeof __app_id !== 'undefined' ? __app_id : 'smoothea-cava-app', 'public', 'data', 'orders', orderId);
-                await window.updateDoc(orderDocRef, { status: newStatus });
-                showNotification(`Status pesanan diperbarui: ${newStatus}`);
-            } catch (err) {
-                console.error("Gagal update status:", err);
-            }
-        }
+        menus.push(newMenu);
+        saveStoredMenu(menus);
+        initApp();
+        renderAdminMenuTable();
+        document.getElementById("addMenuForm").reset();
+        showNotification("Varian menu baru berhasil ditambahkan!");
+      };
 
-        // Add item to Firestore
-        async function handleAddMenu(e) {
-            e.preventDefault();
-            const newItem = {
-                name: document.getElementById('mName').value,
-                category: document.getElementById('mCategory').value,
-                price: Number(document.getElementById('mPrice').value),
-                tag: document.getElementById('mTag').value || 'Fresh Blend',
-                badge: document.getElementById('mBadge').value || '',
-                img: document.getElementById('mImg').value,
-                desc: document.getElementById('mDesc').value
-            };
+      window.deleteMenuItem = function (id) {
+        let menus = getStoredMenu();
+        menus = menus.filter((m) => m.id !== id);
+        saveStoredMenu(menus);
+        initApp();
+        renderAdminMenuTable();
+        showNotification("Varian menu dihapus.");
+      };
 
-            try {
-                await window.addDoc(window.publicMenuColPath, newItem);
-                showNotification("Varian menu baru disimpan ke Firestore!");
-                document.getElementById('addMenuForm').reset();
-            } catch (err) {
-                console.error("Gagal tambah menu:", err);
-            }
-        }
+      // Inisialisasi App saat halaman dimuat
+      function initApp() {
+        const menus = getStoredMenu();
+        renderMenuGrid(menus);
+      }
 
-        // Delete menu item from Firestore
-        async function deleteMenuItem(id) {
-            try {
-                const itemRef = window.doc(window.db, 'artifacts', typeof __app_id !== 'undefined' ? __app_id : 'smoothea-cava-app', 'public', 'data', 'menu', id);
-                await window.deleteDoc(itemRef);
-                showNotification("Menu berhasil dihapus!");
-            } catch (err) {
-                console.error("Gagal hapus menu:", err);
-            }
-        }
+      document.addEventListener("DOMContentLoaded", initApp);
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-
-        if(mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                if(mobileMenu.classList.contains('hidden')) {
-                    menuIcon.classList.remove('fa-xmark');
-                    menuIcon.classList.add('fa-bars');
-                } else {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
-                }
-            });
-        }
-
-        // Menu Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-emerald-600', 'text-white', 'shadow-md');
-                    b.classList.add('bg-white', 'text-gray-600');
-                });
-                btn.classList.add('active', 'bg-emerald-600', 'text-white', 'shadow-md');
-                btn.classList.remove('bg-white', 'text-gray-600');
-
-                const filter = btn.getAttribute('data-filter');
-                const menuGridItems = document.querySelectorAll('#menuGrid .menu-item');
-
-                menuGridItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-
-        // Quick Order via Card
-        function orderItem(variantName) {
-            const selectEl = document.getElementById('custVariant');
-            if(selectEl) {
-                for(let i=0; i<selectEl.options.length; i++) {
-                    if(selectEl.options[i].text.includes(variantName)) {
-                        selectEl.selectedIndex = i;
-                        break;
-                    }
-                }
-            }
-            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Form Submit Logic (Save to Firestore then Redirect to WA)
-        async function handleFormSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btnSubmitOrder');
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> Menyimpan Pesanan...`;
-
-            const name = document.getElementById('custName').value;
-            const variantSelect = document.getElementById('custVariant');
-            const variant = variantSelect.value;
-            const qty = document.getElementById('custQty').value;
-            const phone = document.getElementById('custPhone').value;
-            const note = document.getElementById('custNote').value;
-
-            const orderPayload = {
-                customerName: name,
-                variant: variant,
-                qty: Number(qty),
-                customerPhone: phone,
-                note: note || '-'
-            };
-
-            // 1. Save to Firebase Firestore
-            const orderId = await window.saveOrderToFirestore(orderPayload);
-
-            // 2. Format & Redirect to WhatsApp
-            const text = `Halo Smoothea Cava! Saya mau order:%0A%0A- *ID Pesanan:* ${orderId || 'PENDING'}%0A- *Nama:* ${encodeURIComponent(name)}%0A- *Varian:* ${encodeURIComponent(variant)}%0A- *Jumlah:* ${qty} cup%0A- *No WA:* ${phone}%0A- *Catatan:* ${encodeURIComponent(note || '-')}`;
-
-            showNotification("Pesanan tersimpan di Firestore! Membuka WhatsApp...");
-
-            setTimeout(() => {
-                window.open(`https://wa.me/6281212912410?text=${text}`, '_blank');
-                btn.disabled = false;
-                btn.innerHTML = `<i class="fa-brands fa-whatsapp text-xl"></i> Simpan Pesanan & Buka WA`;
-            }, 800);
-        }
+      }
     </script>
-</body>
+  </body>
 </html>
